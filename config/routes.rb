@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reporting_cycles
+  resources :conventions
   resources :region_countries
   resources :regions
   resources :countries

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Reporting Cycles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Convention</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reporting_cycles.each do |reporting_cycle| %>
+      <tr>
+        <td><%= reporting_cycle.convention_id %></td>
+        <td><%= reporting_cycle.date %></td>
+        <td><%= reporting_cycle.name %></td>
+        <td><%= reporting_cycle.description %></td>
+        <td><%= link_to 'Show', reporting_cycle %></td>
+        <td><%= link_to 'Edit', edit_reporting_cycle_path(reporting_cycle) %></td>
+        <td><%= link_to 'Destroy', reporting_cycle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reporting cycle', new_reporting_cycle_path %>

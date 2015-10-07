@@ -155,15 +155,21 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#conventions"><i class="fa fa-fw fa-leaf"></i> Conventions <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="conventions" class="collapse">
                             <li>
-                                <%= link_to "View Conventions", countries_path %>
+                                <%= link_to "View Conventions", conventions_path %>
                             </li>
                             <li>
-                                <%= link_to "Add a Conventions", new_country_path %>
+                                <%= link_to "Add a Conventions", new_convention_path %>
                             </li>
                              <li>
-                                <%= link_to "Add a Reporting Cycle", new_country_path %>
+                                <%= link_to "View Reporting Cycle", reporting_cycles_path %>
                             </li>
                             <li>
+                                <%= link_to "Add a Reporting Cycle", new_reporting_cycle_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Memberships Types", new_country_path %>
+                            </li>
+                             <li>
                                 <%= link_to "Manage Memberships", new_country_path %>
                             </li>
                             

@@ -1,0 +1,2 @@
+module ReportingCyclesHelper
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Convention:</strong>
+  <%= @reporting_cycle.convention_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reporting_cycle.date %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reporting_cycle.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @reporting_cycle.description %>
+</p>
+
+<%= link_to 'Edit', edit_reporting_cycle_path(@reporting_cycle) %> |
+<%= link_to 'Back', reporting_cycles_path %>

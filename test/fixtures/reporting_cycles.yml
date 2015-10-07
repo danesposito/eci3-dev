@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  convention_id: 1
+  date: 2015-10-07
+  name: MyString
+  description: MyText
+
+two:
+  convention_id: 1
+  date: 2015-10-07
+  name: MyString
+  description: MyText
