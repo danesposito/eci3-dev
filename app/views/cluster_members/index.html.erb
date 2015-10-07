@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cluster Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cluster</th>
+      <th>Convention</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cluster_members.each do |cluster_member| %>
+      <tr>
+        <td><%= cluster_member.cluster_id %></td>
+        <td><%= cluster_member.convention_id %></td>
+        <td><%= link_to 'Show', cluster_member %></td>
+        <td><%= link_to 'Edit', edit_cluster_member_path(cluster_member) %></td>
+        <td><%= link_to 'Destroy', cluster_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cluster member', new_cluster_member_path %>

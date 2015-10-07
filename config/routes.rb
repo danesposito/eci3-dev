@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cluster_members
+  resources :clusters
   resources :reporting_cycles
   resources :conventions
   resources :region_countries

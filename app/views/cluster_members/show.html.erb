@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cluster:</strong>
+  <%= @cluster_member.cluster_id %>
+</p>
+
+<p>
+  <strong>Convention:</strong>
+  <%= @cluster_member.convention_id %>
+</p>
+
+<%= link_to 'Edit', edit_cluster_member_path(@cluster_member) %> |
+<%= link_to 'Back', cluster_members_path %>

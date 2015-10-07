@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007164601) do
+ActiveRecord::Schema.define(version: 20151007171110) do
+
+  create_table "cluster_members", force: :cascade do |t|
+    t.integer  "cluster_id"
+    t.integer  "convention_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "clusters", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "conventions", force: :cascade do |t|
     t.string   "name"

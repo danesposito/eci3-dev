@@ -176,13 +176,19 @@
                         </ul>
                     </li>
                       <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#cluster"><i class="fa fa-fw fa-tree"></i> Convention Cluster <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#cluster"><i class="fa fa-fw fa-tree"></i> Convention Clusters <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="cluster" class="collapse">
                             <li>
-                                <%= link_to "View Conventions", countries_path %>
+                                <%= link_to "View Clusters", clusters_path %>
                             </li>
                             <li>
-                                <%= link_to "Add a Conventions", new_country_path %>
+                                <%= link_to "Add a Cluster", new_cluster_path %>
+                            </li>
+                            <li>
+                                <%= link_to "View Cluster Memberships", cluster_members_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Add a Cluster Memberships", new_cluster_member_path %>
                             </li>
                             
                         </ul>
