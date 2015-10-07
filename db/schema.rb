@@ -11,15 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006213857) do
+ActiveRecord::Schema.define(version: 20151007144107) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
-    t.integer  "population"
-    t.integer  "area"
+    t.integer  "population", limit: 8
+    t.integer  "area",       limit: 8
     t.boolean  "un_member"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "region_countries", force: :cascade do |t|
+    t.integer  "region_id"
+    t.integer  "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "slug"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

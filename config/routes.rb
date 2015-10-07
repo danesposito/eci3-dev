@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :region_countries
+  resources :regions
   resources :countries
   resources :countries
 
