@@ -18,7 +18,7 @@ class CountriesControllerTest < ActionController::TestCase
 
   test "should create country" do
     assert_difference('Country.count') do
-      post :create, country: { alternative: @country.alternative, country_code: @country.country_code, description: @country.description, name: @country.name }
+      post :create, country: { area: @country.area, name: @country.name, population: @country.population, un_member: @country.un_member }
     end
 
     assert_redirected_to country_path(assigns(:country))
@@ -35,7 +35,7 @@ class CountriesControllerTest < ActionController::TestCase
   end
 
   test "should update country" do
-    patch :update, id: @country, country: { alternative: @country.alternative, country_code: @country.country_code, description: @country.description, name: @country.name }
+    patch :update, id: @country, country: { area: @country.area, name: @country.name, population: @country.population, un_member: @country.un_member }
     assert_redirected_to country_path(assigns(:country))
   end
 

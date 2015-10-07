@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  alternative: 
-  country_code: MyString
-  description: MyText
+  population: 1
+  area: 1
+  un_member: false
 
 two:
   name: MyString
-  alternative: 
-  country_code: MyString
-  description: MyText
+  population: 1
+  area: 1
+  un_member: false

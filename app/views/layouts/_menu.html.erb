@@ -14,7 +14,7 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
+                <!--li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
                         <li class="message-preview">
@@ -24,7 +24,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong>Dan Esposito</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -93,9 +93,9 @@
                             <a href="#">View All</a>
                         </li>
                     </ul>
-                </li>
+                </li-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Dan  Esposito <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -122,8 +122,8 @@
                         <% end %>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-globe"></i> Countries <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#countries"><i class="fa fa-fw fa-globe"></i> Countries <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="countries" class="collapse">
                             <li>
                                 <%= link_to "View Countries", countries_path %>
                             </li>
@@ -133,10 +133,52 @@
                             
                         </ul>
                     </li>
-                    <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#regions"><i class="fa fa-fw fa-compass"></i> Regions <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="regions" class="collapse">
+                            <li>
+                                <%= link_to "View Regions", countries_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Add a Region", new_country_path %>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#conventions"><i class="fa fa-fw fa-leaf"></i> Conventions <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="conventions" class="collapse">
+                            <li>
+                                <%= link_to "View Conventions", countries_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Add a Conventions", new_country_path %>
+                            </li>
+                             <li>
+                                <%= link_to "Add a Reporting Cycle", new_country_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Manage Memberships", new_country_path %>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                      <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#cluster"><i class="fa fa-fw fa-tree"></i> Convention Cluster <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="cluster" class="collapse">
+                            <li>
+                                <%= link_to "View Conventions", countries_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Add a Conventions", new_country_path %>
+                            </li>
+                            
+                        </ul>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Reports (Construction)
+                    </li>
+                    <!--li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
                     <li>
@@ -164,7 +206,7 @@
                     </li>
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    </li-->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
