@@ -1,0 +1,36 @@
+<%= form_for(@convention_membership) do |f| %>
+  <% if @convention_membership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@convention_membership.errors.count, "error") %> prohibited this convention_membership from being saved:</h2>
+
+      <ul>
+      <% @convention_membership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :convention_id %><br>
+    <%= f.collection_select :convention_id, Convention.order(:name),:id,:name, include_blank: true %>
+
+  </div><br>
+  <div class="field">
+    <%= f.label :country_id %><br>
+    <%= f.collection_select :country_id, Country.order(:name),:id,:name, include_blank: true %>
+  </div><br>
+  <div class="field">
+    <%= f.label :membership_type_id %><br>
+    <%= f.collection_select :membership_type_id, MembershipType.order(:name),:id,:name, include_blank: true %>
+
+  </div><br>
+  
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit %>
+  </div><br>
+<% end %>

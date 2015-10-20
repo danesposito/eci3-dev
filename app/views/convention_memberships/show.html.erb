@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Convention:</strong>
+  <%= @convention_membership.convention_id %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @convention_membership.country_id %>
+</p>
+
+<p>
+  <strong>Membership type:</strong>
+  <%= @convention_membership.membership_type_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @convention_membership.date %>
+</p>
+
+<%= link_to 'Edit', edit_convention_membership_path(@convention_membership) %> |
+<%= link_to 'Back', convention_memberships_path %>

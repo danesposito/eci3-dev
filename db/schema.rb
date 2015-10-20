@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007171110) do
+ActiveRecord::Schema.define(version: 20151007174501) do
 
   create_table "cluster_members", force: :cascade do |t|
     t.integer  "cluster_id"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20151007171110) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "convention_memberships", force: :cascade do |t|
+    t.integer  "convention_id"
+    t.integer  "country_id"
+    t.string   "membership_type_id"
+    t.date     "date"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "conventions", force: :cascade do |t|
@@ -41,6 +50,13 @@ ActiveRecord::Schema.define(version: 20151007171110) do
     t.boolean  "un_member"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "membership_types", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "region_countries", force: :cascade do |t|

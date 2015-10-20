@@ -2,7 +2,7 @@
 
 <h1>Listing Cluster Members</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Cluster</th>
@@ -14,8 +14,8 @@
   <tbody>
     <% @cluster_members.each do |cluster_member| %>
       <tr>
-        <td><%= cluster_member.cluster_id %></td>
-        <td><%= cluster_member.convention_id %></td>
+        <td><%= cluster_member.cluster.name %></td>
+        <td><%= cluster_member.convention.name %></td>
         <td><%= link_to 'Show', cluster_member %></td>
         <td><%= link_to 'Edit', edit_cluster_member_path(cluster_member) %></td>
         <td><%= link_to 'Destroy', cluster_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>

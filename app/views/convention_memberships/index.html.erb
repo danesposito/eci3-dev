@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Convention Memberships</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Convention</th>
+      <th>Country</th>
+      <th>Membership type</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @convention_memberships.each do |convention_membership| %>
+      <tr>
+        <td><%= convention_membership.convention.name %></td>
+        <td><%= convention_membership.country.name %></td>
+        <td><%= convention_membership.membership_type.name %></td>
+        <td><%= convention_membership.date %></td>
+        <td><%= link_to 'Show', convention_membership %></td>
+        <td><%= link_to 'Edit', edit_convention_membership_path(convention_membership) %></td>
+        <td><%= link_to 'Destroy', convention_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Convention membership', new_convention_membership_path %>

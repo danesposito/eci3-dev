@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :convention_memberships
+  resources :membership_types
   resources :cluster_members
   resources :clusters
   resources :reporting_cycles

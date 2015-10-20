@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  convention_id: 1
+  country_id: 1
+  membership_type_id: MyString
+  date: 2015-10-07
+
+two:
+  convention_id: 1
+  country_id: 1
+  membership_type_id: MyString
+  date: 2015-10-07
