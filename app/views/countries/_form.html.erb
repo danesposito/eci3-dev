@@ -11,21 +11,60 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="field">     
+    <%= f.label   :name  %><br>     
+    <%= f.text_field  :name  %>   
   </div>
-  <div class="field">
-    <%= f.label :population %><br>
-    <%= f.number_field :population %>
+  <div class="field">     
+    <%= f.label   :population  %><br>     
+    <%= f.number_field  :population  %>   
   </div>
-  <div class="field">
-    <%= f.label :area %><br>
-    <%= f.number_field :area %>
+  <div class="field">     
+    <%= f.label   :population_growth   %><br>     
+    <%= f.number_field  :population_growth  , :class => 'text_field', :step => 'any' %>   
   </div>
-  <div class="field">
-    <%= f.label :un_member %><br>
-    <%= f.check_box :un_member %>
+  <div class="field">     
+    <%= f.label   :area  %><br>     
+    <%= f.text_field  :area  %>   
+  </div>
+  <div class="field">    
+     <%= f.label   :gdp   %><br>     
+     <%= f.number_field  :gdp   %>   
+   </div>
+  <div class="field">    
+     <%= f.label   :gdp_per_capita  %><br>     
+     <%= f.number_field  :gdp_per_capita , :class => 'text_field', :step => 'any' %>   
+   </div>
+  <div class="field">     
+    <%= f.label   :iso_code_2  %><br>     
+    <%= f.text_field  :iso_code_2  %>   
+  </div>
+  <div class="field">    
+     <%= f.label   :iso_code_3  %><br>     
+     <%= f.text_field  :iso_code_3  %>   
+   </div>
+  <div class="field">    
+     <%= f.label   :country_numeric   %><br>    
+    <%= f.number_field  :country_numeric   %>   
+    </div>
+  <div class="field">     
+  <%= f.label   :threatened_species  %><br>     
+  <%= f.number_field  :threatened_species  %>   
+  </div>
+  <div class="field">     
+    <%= f.label   :forested_area   %><br>     
+    <%= f.number_field  :forested_area  , :class => 'text_field', :step => 'any' %>   
+  </div>
+  <div class="field">    
+     <%= f.label   :co2_emission  %><br>     
+     <%= f.number_field  :co2_emission  %>   </div>
+  <div class="field">    
+     <%= f.label   :co2_per_capita  %><br>     
+     <%= f.number_field  :co2_per_capita , :class => 'text_field', :step => 'any' %>   
+   </div>
+  <div class="field">     
+    <%= f.label   :agriculture_production  %><br>     
+    <%= f.number_field  :agriculture_production  %>   
   </div>
   <div class="actions">
     <%= f.submit %>

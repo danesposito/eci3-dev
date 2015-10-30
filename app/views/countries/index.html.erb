@@ -2,12 +2,23 @@
 
 <h1>Listing Countries</h1>
 
-<table class="table">
+<!--table class="table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Population</th>
-      <th>Area</th>
+      <th>Population Growth (%)</th>
+      <th>Area (km<sup>2</sup></th>
+      <th>GDP (million current US$)</th>
+      <th>GDP per capita (current US$)</th>
+      <th>ISO Code 3166 Alpha 2</th>
+      <th>ISO Code 3166 Alpha 3</th>
+      <th>ISO Code 3166 Numeric</th>
+      <th>Threatened Species</th>
+      <th>Forrested Area (% of land area)</th>
+      <th>CO2 Emission Estimates</th>
+      <th>CO2 Emission Per Capita</th>
+      <th>Agricultural production index</th>
       <th>Un member</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +29,18 @@
       <tr>
         <td><%= country.name %></td>
         <td><%= country.population %></td>
+        <td><%= country.population_growth %></td>
         <td><%= country.area %></td>
+        <td><%= country.gdp %></td>
+        <td><%= country.gdp_per_capita %></td>
+        <td><%= country.iso_code_2 %></td>
+        <td><%= country.iso_code_3 %></td>
+        <td><%= country.country_numeric %></td>
+        <td><%= country.threatened_species %></td>
+        <td><%= country.forested_area %></td>
+        <td><%= country.co2_emission %></td>
+        <td><%= country.co2_per_capita %></td>
+        <td><%= country.agriculture_production %></td>
         <td><%= country.un_member %></td>
         <td><%= link_to 'Show', country %></td>
         <td><%= link_to 'Edit', edit_country_path(country) %></td>
@@ -26,7 +48,51 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table-->
+
+<br>
+
+<div class="row">
+<% @countries.each do |country| %>
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= country.name %>">
+          <div class="panel-heading">
+          <div class="panel-body" style="float:right;">
+                <%= link_to 'v', country, class: 'btn btn-info btn-xs' %>
+                <%= link_to 'e', edit_country_path(country), class: 'btn btn-info btn-xs' %>
+                <%= link_to 'x', country, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+            </div>
+            <h4><%= country.name %></h4> 
+            
+          </div>
+          <div class="panel-body">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#<%= country.name %>" href="#collapse-<%= country.name %>" aria-expanded="true">
+              Quick View Data
+            </a>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-<%= country.name %>" aria-expanded="true">
+            <ul class="list-group">
+            <li class="list-group-item"><strong>Population:</strong> <span class="right"><%= number_with_delimiter(country.population) %> </span></li>
+            <li class="list-group-item"><strong>Population Growth (%):</strong> <span class="right"><%= country.population_growth %>  </span></li>
+            <li class="list-group-item"><strong>Area (km<sup>2</sup>:</strong> <span class="right"><%= country.area %> </span></li>
+            <li class="list-group-item"><strong>GDP (million current US$):</strong> <span class="right"><%= country.gdp %>  </span></li>
+            <li class="list-group-item"><strong>GDP per capita (current US$):</strong> <span class="right"><%= country.gdp_per_capita %> </span></li>
+            <li class="list-group-item"><strong>ISO Code 3166 Alpha 2:</strong> <span class="right"><%= country.iso_code_2 %> </span></li>
+            <li class="list-group-item"><strong>ISO Code 3166 Alpha 3:</strong> <span class="right"><%= country.iso_code_3 %> </span></li>
+            <li class="list-group-item"><strong>ISO Code 3166 Numeric:</strong> <span class="right"><%= country.country_numeric %>  </span></li>
+            <li class="list-group-item"><strong>Threatened Species:</strong> <span class="right"><%= country.threatened_species %> </span></li>
+            <li class="list-group-item"><strong>Forrested Area (% of land area):</strong> <span class="right"><%= country.forested_area %>  </span></li>
+            <li class="list-group-item"><strong>CO2 Emission Estimates:</strong> <span class="right"><%= country.co2_emission %> </span></li>
+            <li class="list-group-item"><strong>CO2 Emission Per Capita:</strong> <span class="right"><%= country.co2_per_capita %> </span></li>
+            <li class="list-group-item"><strong>Agricultural production index:</strong> <span class="right"><%= country.agriculture_production %> </span></li>
+            <li class="list-group-item"><strong>Un Member:</strong> <span class="right"><%= country.un_member %>  </span></li>
+          </ul>
+          </div>
+          
+      </div>
+      </div>
+<% end %>
+</div>
 
 <br>
 

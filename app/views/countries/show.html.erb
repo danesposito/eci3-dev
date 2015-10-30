@@ -1,24 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @country.name %>
-</p>
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= @country.name %>">
+          <div class="panel-heading">
+          <div class="panel-body" style="float:right;">
+                           <%= link_to 'Edit', edit_country_path(@country) %> |
+			<%= link_to 'Back', countries_path %>
 
-<p>
-  <strong>Population:</strong>
-  <%= @country.population %>
-</p>
+            </div>
+            <h4><%= @country.name %></h4> 
+            
+          </div>
+          <div class="panel-body">
 
-<p>
-  <strong>Area:</strong>
-  <%= @country.area %>
-</p>
+          </div>
+          <div class="panel-collapse collapse in" id="collapse-<%= @country.name %>" aria-expanded="true">
+            <ul class="list-group">
+            <li class="list-group-item"><strong>Population: </strong> <span class="right"><%= number_with_delimiter(@country.population) %> </span></li>
+            <li class="list-group-item"><strong>Population Growth (%): </strong> <span class="right"><%= @country.population_growth %>  </span></li>
+            <li class="list-group-item"><strong>Area (km<sup>2)</sup>: </strong> <span class="right"><%= number_with_delimiter(@country.area) %> </span></li>
+            <li class="list-group-item"><strong>GDP (million current US$): </strong> <span class="right"><%= @country.gdp %>  </span></li>
+            <li class="list-group-item"><strong>GDP per capita (current US$): </strong> <span class="right"><%= @country.gdp_per_capita %> </span></li>
+            <li class="list-group-item"><strong>ISO Code 3166 Alpha 2: </strong> <span class="right"><%= @country.iso_code_2 %> </span></li>
+            <li class="list-group-item"><strong>ISO Code 3166 Alpha 3: </strong> <span class="right"><%= @country.iso_code_3 %> </span></li>
+            <li class="list-group-item"><strong>ISO Code 3166 Numeric: </strong> <span class="right"><%= @country.country_numeric %>  </span></li>
+            <li class="list-group-item"><strong>Threatened Species: </strong> <span class="right"><%= @country.threatened_species %> </span></li>
+            <li class="list-group-item"><strong>Forrested Area (% of land area): </strong> <span class="right"><%= @country.forested_area %>  </span></li>
+            <li class="list-group-item"><strong>CO2 Emission Estimates: </strong> <span class="right"><%= @country.co2_emission %> </span></li>
+            <li class="list-group-item"><strong>CO2 Emission Per Capita: </strong> <span class="right"><%= @country.co2_per_capita %> </span></li>
+            <li class="list-group-item"><strong>Agricultural production index: </strong> <span class="right"><%= @country.agriculture_production %> </span></li>
+            <li class="list-group-item"><strong>Un Member: a</strong> <span class="right"><%= @country.un_member %>  </span></li>
+          </ul>
+          </div>
+          
+      </div>
+      </div>
 
-<p>
-  <strong>Un member:</strong>
-  <%= @country.un_member %>
-</p>
-
-<%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'Back', countries_path %>

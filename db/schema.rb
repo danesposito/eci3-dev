@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007174501) do
+ActiveRecord::Schema.define(version: 20151030020418) do
 
   create_table "cluster_members", force: :cascade do |t|
     t.integer  "cluster_id"
@@ -45,11 +45,22 @@ ActiveRecord::Schema.define(version: 20151007174501) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
-    t.integer  "population", limit: 8
-    t.integer  "area",       limit: 8
+    t.integer  "population",             limit: 8
+    t.integer  "area",                   limit: 8
     t.boolean  "un_member"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.decimal  "population_growth"
+    t.integer  "gdp",                    limit: 8
+    t.integer  "gdp_per_capita",         limit: 8
+    t.text     "iso_code_2"
+    t.text     "iso_code_3"
+    t.integer  "country_numeric"
+    t.integer  "threatened_species"
+    t.decimal  "forested_area"
+    t.integer  "co2_emission",           limit: 8
+    t.decimal  "co2_per_capita"
+    t.integer  "agriculture_production"
   end
 
   create_table "membership_types", force: :cascade do |t|

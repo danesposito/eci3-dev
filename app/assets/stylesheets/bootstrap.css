@@ -5291,10 +5291,17 @@ a.thumbnail.active {
   padding-left: 0;
   margin-bottom: 20px;
 }
+.list-group li:nth-child(even){
+  background-color: #efefef;
+}
+.list-group li:nth-child(odd){
+  background-color: #fff;
+}
+
 .list-group-item {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 15px 15px;
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -5307,6 +5314,9 @@ a.thumbnail.active {
   margin-bottom: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
+}
+.list-group-item .right {
+  float:right;
 }
 a.list-group-item,
 button.list-group-item {
