@@ -137,6 +137,18 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#regions"><i class="fa fa-fw fa-compass"></i> Regions <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="regions" class="collapse">
                             <li>
+                                <%= link_to "View Region Sources", region_sources_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Add a Region Source", new_region_source_path %>
+                            </li>
+                            <li>
+                                <%= link_to "View Region Groups", region_groups_path %>
+                            </li>
+                            <li>
+                                <%= link_to "Add a Region Group", new_region_group_path %>
+                            </li>
+                            <li>
                                 <%= link_to "View Regions", regions_path %>
                             </li>
                             <li>

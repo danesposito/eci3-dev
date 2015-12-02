@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= @region_source.name %>">
+          <div class="panel-heading">
+          <div class="panel-body" style="float:right;">
+            <%= link_to 'Edit', edit_region_source_path(@region_source) %> |
+			<%= link_to 'Back', region_sources_path %>
+
+            </div>
+            <h4><%= @region_source.name %></h4> 
+            
+          </div>
+          <div class="panel-body">
+            
+ 
+          <p><span class="right"><%= @region_source.description %> </span></p>
+          
+          <hr>
+
+          <p><strong>Website:</strong>
+          <span class="right"><%= @region_source.website %> </span></p>
+
+          <hr>
+           
+              <div class="panel-body">
+                <% @region_source.region_groups.each do |region_group| %>
+                  <%= link_to region_group.name, region_group, class: 'small' %> 
+                  
+                <% end %>
+                
+              </div>
+         
+          
+      </div>
+          
+      </div>
+      </div>
+

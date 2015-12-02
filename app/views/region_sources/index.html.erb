@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Region Sources</h1>
+<%= link_to 'Add Region Source', new_region_source_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
+<div class="row">
+<% @region_sources.each do |region_source| %>
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= region_source.name.tr(' ','') %>">
+          <div class="panel-heading">
+          <div class="panel-body" style="float:right;">
+                <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, region_source, class: 'btn btn-info btn-xs' %>
+                <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_region_source_path(region_source), class: 'btn btn-info btn-xs' %>
+                <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, region_source, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+            </div>
+            <h4><%= region_source.name %></h4> 
+            
+          </div>
+          <div class="panel-body">
+            
+ 
+          <p><span class="right"><%= region_source.description %> </span></p>
+          
+          <hr>
+
+          <p><strong>Website:</strong>
+          <span class="right"><%= region_source.website %> </span></p>
+
+          <hr>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#<%= region_source.name %>" href="#collapse-<%= region_source.name.tr(' ','') %>" aria-expanded="true">
+              Quick View Region Types
+            </a>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-<%= region_source.name.tr(' ','') %>" aria-expanded="true">
+              <div class="panel-body">
+                <% region_source.region_groups.each do |region_group| %>
+                  <%= link_to region_group.name, region_group, class: 'small' %> 
+                  
+                <% end %>
+                
+              </div>
+          </div>
+          
+      </div>
+      </div>
+<% end %>
+</div>
+
+<br>

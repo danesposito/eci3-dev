@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :region_groups
+  resources :region_sources
   resources :convention_memberships
   resources :membership_types
   resources :cluster_members

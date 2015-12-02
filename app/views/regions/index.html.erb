@@ -1,31 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Regions</h1>
+<%= link_to 'Add New Region', new_region_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
+<div class="row">
+<% @regions.each do |region| %>
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= region.name.tr(' ','') %>">
+          <div class="panel-heading">
+          <div class="panel-body" style="float:right;">
+                <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, region, class: 'btn btn-info btn-xs' %>
+                <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_region_path(region), class: 'btn btn-info btn-xs' %>
+                <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, region, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+            </div>
+            <h4><%= region.name %></h4> 
+            
+          </div>
+          <div class="panel-body">
+            
+ 
+          <p><span class="small"><em><%= link_to region.region_group.region_source.name, region.region_group.region_source, class: 'small' %> - <%= link_to region.region_group.name, region.region_group, class: 'small' %></em></span></p>
+          <hr>
+          <p><span class=""><%= region.description %></span></p>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          
 
-  <tbody>
-    <% @regions.each do |region| %>
-      <tr>
-        <td><%= region.name %></td>
-        <td><%= region.description %></td>
-        <td><%= region.slug %></td>
-        <td><%= link_to 'Show', region %></td>
-        <td><%= link_to 'Edit', edit_region_path(region) %></td>
-        <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+ 
+          <hr>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#<%= region.name %>" href="#collapse-<%= region.name.tr(' ','') %>" aria-expanded="true">
+              Quick View Region Types
+            </a>
+          </div>
+          <div class="panel-collapse collapse" id="collapse-<%= region.name.tr(' ','') %>" aria-expanded="true">
+              
+                  <%=  %> 
+                  
+                
+          </div>
+          
+      </div>
+      </div>
+<% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Region', new_region_path %>
+
+
+

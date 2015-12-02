@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Convention:</strong>
-  <%= @reporting_cycle.convention_id %>
-</p>
+<div class="col-lg-4">
+	<div class="panel panel-default" id="<%= @reporting_cycle.name %>">
+		<div class="panel-heading">
+			<div class="panel-body" style="float:right;">
+				<%= link_to 'Edit', edit_reporting_cycle_path(@reporting_cycle) %> |
+				<%= link_to 'Back', reporting_cycles_path %>
 
-<p>
-  <strong>Date:</strong>
-  <%= @reporting_cycle.date %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @reporting_cycle.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @reporting_cycle.description %>
-</p>
-
-<%= link_to 'Edit', edit_reporting_cycle_path(@reporting_cycle) %> |
-<%= link_to 'Back', reporting_cycles_path %>
+			</div>
+			<h4><%= @reporting_cycle.name %></h4> 
+			
+		</div>
+		<div class="panel-body">
+			<p><%= link_to @reporting_cycle.convention.name, @reporting_cycle.convention, class: 'small' %></p>
+			<hr>
+			<span class="">Reporting Year: <%= @reporting_cycle.date.year %></span></p>
+			<hr>
+			<span class=""><%= @reporting_cycle.description %></span></p>
+			
+		</div>
+	</div>
+</div>

@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @convention.name %>
-</p>
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= @convention.name %>">
+            <div class="panel-heading">
+                <div class="panel-body" style="float:right;">
+                  <%= link_to 'Edit', edit_convention_path(@convention) %> |
+                  <%= link_to 'Back', conventions_path %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @convention.description %>
-</p>
+                </div>
+                <h4><%= @convention.name %></h4> 
+                  
+            </div>
+          <div class="panel-body">
+            
+            <span class="right"><%= @convention.description %></span></p>
+            <hr>
+            <% @convention.reporting_cycles.each do |reporting_cycle| %>
+                <p><%= link_to reporting_cycle.name, reporting_cycle, class: 'small' %></p>
+              <% end %>
+          </div>
+        </div>
+  </div>
 
-<%= link_to 'Edit', edit_convention_path(@convention) %> |
-<%= link_to 'Back', conventions_path %>

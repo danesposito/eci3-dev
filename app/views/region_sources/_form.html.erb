@@ -1,0 +1,15 @@
+<%= simple_form_for(@region_source) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :website %>
+  <div id="region_groups">
+    <%= f.simple_fields_for :region_groups do |builder| %>
+        <%= render 'region_group_fields', :f => builder %>
+    <% end %>
+    <div class="links">
+         <%= link_to_add_association 'Add Region Group', f, :region_groups, :class => 'btn btn-info' %>
+    </div>
+  </div>
+  <br>
+  <%= f.button :submit %>
+<% end %>

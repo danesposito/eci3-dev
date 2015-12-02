@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030020418) do
+ActiveRecord::Schema.define(version: 20151201044615) do
 
   create_table "cluster_members", force: :cascade do |t|
     t.integer  "cluster_id"
@@ -77,12 +77,29 @@ ActiveRecord::Schema.define(version: 20151030020418) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "region_groups", force: :cascade do |t|
+    t.integer  "region_source_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "region_sources", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "website"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "regions", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "slug"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "region_group_id"
   end
 
   create_table "reporting_cycles", force: :cascade do |t|

@@ -6808,3 +6808,15 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.checkbox-list input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: top;
+  width: 10%;
+}
+
+.checkbox-list input[type="checkbox"] + label {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+  width: 80%;
+}

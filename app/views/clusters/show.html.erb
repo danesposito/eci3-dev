@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cluster.name %>
-</p>
+<div class="col-lg-4">
+	<div class="panel panel-default" id="<%= @cluster.name %>">
+		<div class="panel-heading">
+			<div class="panel-body" style="float:right;">
+				<%= link_to 'Edit', edit_cluster_path(@cluster) %> |
+				<%= link_to 'Back', clusters_path %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @cluster.description %>
-</p>
-
-<%= link_to 'Edit', edit_cluster_path(@cluster) %> |
-<%= link_to 'Back', clusters_path %>
+			</div>
+			<h4><%= @cluster.name %></h4> 
+			
+		</div>
+		<div class="panel-body">
+			
+			<span class="right"><%= @cluster.description %></span></p>
+			<hr>
+			<% @cluster.conventions.each do |convention| %>
+			<p><%= link_to convention.name, convention, class: 'small' %></p>
+			<% end %>
+		</div>
+	</div>
+</div>

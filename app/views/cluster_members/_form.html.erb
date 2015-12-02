@@ -1,27 +1,5 @@
-<%= form_for(@cluster_member) do |f| %>
-  <% if @cluster_member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cluster_member.errors.count, "error") %> prohibited this cluster_member from being saved:</h2>
-
-      <ul>
-      <% @cluster_member.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :cluster_id %><br>
-        <%= f.collection_select :cluster_id, Cluster.order(:name),:id,:name, include_blank: true %>
-
-  </div>
-  <div class="field">
-    <%= f.label :convention_id %><br>
-        <%= f.collection_select :convention_id, Convention.order(:name),:id,:name, include_blank: true %>
-
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for(@cluster_member) do |f| %>
+  <%= f.association :cluster %>
+  <%= f.association :convention %>
+  <%= f.button :submit %>
 <% end %>

@@ -1,33 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Reporting Cycles</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Convention</th>
-      <th>Date</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reporting_cycles.each do |reporting_cycle| %>
-      <tr>
-        <td><%= reporting_cycle.convention.name%></td>
-        <td><%= reporting_cycle.date %></td>
-        <td><%= reporting_cycle.name %></td>
-        <td><%= reporting_cycle.description %></td>
-        <td><%= link_to 'Show', reporting_cycle %></td>
-        <td><%= link_to 'Edit', edit_reporting_cycle_path(reporting_cycle) %></td>
-        <td><%= link_to 'Destroy', reporting_cycle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to 'Add Reporting Cycle', new_reporting_cycle_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
+<div class="row">
+  <% @reporting_cycles.each do |reporting_cycle| %>
+  <div class="col-lg-4">
+    <div class="panel panel-default" id="<%= reporting_cycle.name.tr(' ','') %>">
+      <div class="panel-heading">
+        <div class="panel-body" style="float:right;">
+          <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, reporting_cycle, class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_reporting_cycle_path(reporting_cycle), class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, reporting_cycle, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+        </div>
+        <h4><%= reporting_cycle.name %></h4> 
+        
+      </div>
+      <div class="panel-body">
+        
+        <p><%= link_to reporting_cycle.convention.name, reporting_cycle.convention, class: 'small' %></p>
+        <hr>
+        <span class="">Reporting Year: <%= reporting_cycle.date.year %></span></p>
+        <hr>
+        <p><span class=""><%= reporting_cycle.description %></span></p>
+        
+      </div>
+      
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Reporting cycle', new_reporting_cycle_path %>
+
+
+

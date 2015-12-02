@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @region.name %>
-</p>
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= @region.name %>">
+            <div class="panel-heading">
+                <div class="panel-body" style="float:right;">
+                  <%= link_to 'Edit', edit_region_path(@region) %> |
+                  <%= link_to 'Back', regions_path %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @region.description %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @region.slug %>
-</p>
-
-<%= link_to 'Edit', edit_region_path(@region) %> |
-<%= link_to 'Back', regions_path %>
+                </div>
+                <h4><%= @region.name %></h4> 
+                  
+            </div>
+          <div class="panel-body">
+            <p><span class="small"><em><%= link_to @region.region_group.region_source.name, @region.region_group.region_source, class: 'small' %> - <%= link_to @region.region_group.name, @region.region_group, class: 'small' %></em></span></p>
+            <hr>
+            <span class="right"><%= @region.description %></span></p>
+            <hr>
+            <% @region.countries.each do |country| %>
+              <%= link_to country.name, country, class: 'small' %>
+            <% end %>
+          </div>
+        </div>
+  </div>

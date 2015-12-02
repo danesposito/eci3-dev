@@ -1,26 +1,5 @@
-<%= form_for(@region_country) do |f| %>
-  <% if @region_country.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@region_country.errors.count, "error") %> prohibited this region_country from being saved:</h2>
-
-      <ul>
-      <% @region_country.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :region_id %><br>
-    <%= f.collection_select :region_id, Region.order(:name),:id,:name, include_blank: true %>
-  </div><br>
-  <div class="field">
-    <%= f.label :country_id %><br>
-     <%= f.collection_select :country_id, Country.order(:name),:id,:name, include_blank: true %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for(@region_country) do |f| %>
+  <%= f.association :region %>
+  <%= f.association :country %>
+  <%= f.button :submit %>
 <% end %><br>

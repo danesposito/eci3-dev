@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Countries</h1>
+<%= link_to 'Add a New Country', new_country_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
 
 <!--table class="table">
   <thead>
@@ -55,22 +57,22 @@
 <div class="row">
 <% @countries.each do |country| %>
   <div class="col-lg-4">
-        <div class="panel panel-default" id="<%= country.name %>">
+        <div class="panel panel-default" id="<%= country.name.tr(' ','') %>">
           <div class="panel-heading">
           <div class="panel-body" style="float:right;">
-                <%= link_to 'v', country, class: 'btn btn-info btn-xs' %>
-                <%= link_to 'e', edit_country_path(country), class: 'btn btn-info btn-xs' %>
-                <%= link_to 'x', country, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+                <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, country, class: 'btn btn-info btn-xs' %>
+                <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_country_path(country), class: 'btn btn-info btn-xs' %>
+                <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, country, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
             </div>
             <h4><%= country.name %></h4> 
             
           </div>
           <div class="panel-body">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#<%= country.name %>" href="#collapse-<%= country.name %>" aria-expanded="true">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#<%= country.name.tr(' ','') %>" href="#collapse-<%= country.name.tr(' ','') %>" aria-expanded="true">
               Quick View Data
             </a>
           </div>
-          <div class="panel-collapse collapse" id="collapse-<%= country.name %>" aria-expanded="true">
+          <div class="panel-collapse collapse" id="collapse-<%= country.name.tr(' ','') %>" aria-expanded="true">
             <ul class="list-group">
             <li class="list-group-item"><strong>Population:</strong> <span class="right"><%= number_with_delimiter(country.population) %> </span></li>
             <li class="list-group-item"><strong>Population Growth (%):</strong> <span class="right"><%= country.population_growth %>  </span></li>
@@ -96,4 +98,4 @@
 
 <br>
 
-<%= link_to 'New Country', new_country_path %>
+

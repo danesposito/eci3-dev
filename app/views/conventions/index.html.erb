@@ -1,29 +1,49 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Conventions</h1>
+<%= link_to 'Add New Convention', new_convention_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
+<div class="row">
+  <% @conventions.each do |convention| %>
+  <div class="col-lg-4">
+    <div class="panel panel-default" id="<%= convention.name.tr(' ','') %>">
+      <div class="panel-heading">
+        <div class="panel-body" style="float:right;">
+          <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, convention, class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_convention_path(convention), class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, convention, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+        </div>
+        <h4><%= convention.name %></h4> 
+        
+      </div>
+      <div class="panel-body">
+        
+       
+        <p><span class=""><%= convention.description %></span></p>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        
 
-  <tbody>
-    <% @conventions.each do |convention| %>
-      <tr>
-        <td><%= convention.name %></td>
-        <td><%= convention.description %></td>
-        <td><%= link_to 'Show', convention %></td>
-        <td><%= link_to 'Edit', edit_convention_path(convention) %></td>
-        <td><%= link_to 'Destroy', convention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        
+        <hr>
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#<%= convention.name %>" href="#collapse-<%= convention.name.tr(' ','') %>" aria-expanded="true">
+          Quick View Convention Cycles
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="collapse-<%= convention.name.tr(' ','') %>" aria-expanded="true">
+        <div class="panel-body">
+          <% convention.reporting_cycles.each do |reporting_cycle| %>
+          <p><%= link_to reporting_cycle.name, reporting_cycle, class: 'small' %></p>
+          <% end %>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Convention', new_convention_path %>
+

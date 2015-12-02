@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Membership Types</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @membership_types.each do |membership_type| %>
-      <tr>
-        <td><%= membership_type.name %></td>
-        <td><%= membership_type.description %></td>
-        <td><%= link_to 'Show', membership_type %></td>
-        <td><%= link_to 'Edit', edit_membership_type_path(membership_type) %></td>
-        <td><%= link_to 'Destroy', membership_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to 'Add Membership Type', new_membership_type_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
+<div class="row">
+  <% @membership_types.each do |membership_type| %>
+  <div class="col-lg-4">
+    <div class="panel panel-default" id="<%= membership_type.name.tr(' ','') %>">
+      <div class="panel-heading">
+        <div class="panel-body" style="float:right;">
+          <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, membership_type, class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_reporting_cycle_path(membership_type), class: 'btn btn-warning btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, membership_type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+        </div>
+        <h4><%= membership_type.name %></h4> 
+        
+      </div>
+      <div class="panel-body">
+        
+        <p><span class=""><%= membership_type.description %></span></p>
+        
+      </div>
+      
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Membership type', new_membership_type_path %>
+

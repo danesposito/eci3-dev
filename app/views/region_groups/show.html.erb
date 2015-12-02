@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="col-lg-4">
+        <div class="panel panel-default" id="<%= @region_group.name %>">
+            <div class="panel-heading">
+                <div class="panel-body" style="float:right;">
+                  <%= link_to 'Edit', edit_region_group_path(@region_group) %> |
+      			      <%= link_to 'Back', region_groups_path %>
+
+                </div>
+                <h4><%= @region_group.name %></h4> 
+                  
+            </div>
+          <div class="panel-body">
+          	<p>
+			         <em>
+      			  <%= @region_group.region_source.name %>
+      			  </em>
+      			</p>
+            <hr>
+            <span class="right"><%= @region_group.description %></span></p>
+          </div>
+        </div>
+  </div>
+

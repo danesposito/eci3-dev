@@ -1,29 +1,41 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Clusters</h1>
+<%= link_to 'Add New Cluster', new_cluster_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
+<div class="row">
+  <% @clusters.each do |cluster| %>
+  <div class="col-lg-4">
+    <div class="panel panel-default" id="<%= cluster.name.tr(' ','') %>">
+      <div class="panel-heading">
+        <div class="panel-body" style="float:right;">
+          <%= link_to '<i class="fa fa-fw fa-eye"></i>'.html_safe, cluster, class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-pencil"></i>'.html_safe, edit_cluster_path(cluster), class: 'btn btn-info btn-xs' %>
+          <%= link_to '<i class="fa fa-fw fa-close"></i>'.html_safe, cluster, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs'%>
+        </div>
+        <h4><%= cluster.name %></h4> 
+        
+      </div>
+      <div class="panel-body">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @clusters.each do |cluster| %>
-      <tr>
-        <td><%= cluster.name %></td>
-        <td><%= cluster.description %></td>
-        <td><%= link_to 'Show', cluster %></td>
-        <td><%= link_to 'Edit', edit_cluster_path(cluster) %></td>
-        <td><%= link_to 'Destroy', cluster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <p><span class=""><%= cluster.description %></span></p>
+
+        
+        <hr>
+        <% cluster.conventions.each do |convention| %>
+        <p><%= link_to convention.name, convention, class: 'small' %></p>
+        <% end %>
+        
+        
+        
+      </div>
+      
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Cluster', new_cluster_path %>
+
