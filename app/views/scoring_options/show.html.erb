@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Indicator:</strong>
+  <%= @scoring_option.indicator_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @scoring_option.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @scoring_option.value %>
+</p>
+
+<p>
+  <strong>Not applicable:</strong>
+  <%= @scoring_option.not_applicable %>
+</p>
+
+<%= link_to 'Edit', edit_scoring_option_path(@scoring_option) %> |
+<%= link_to 'Back', scoring_options_path %>

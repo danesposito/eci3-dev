@@ -17,6 +17,32 @@
 			<span class="">Reporting Year: <%= @reporting_cycle.date.year %></span></p>
 			<hr>
 			<span class=""><%= @reporting_cycle.description %></span></p>
+			<hr>
+           
+              <div class="panel-body">
+              <h5>Indicator Question Numbers:</h5>
+                <% @reporting_cycle.indicators.each do |indicator| %>
+                  <%= link_to indicator.indicator_type.name, indicator, class: 'small' %>  -
+                  <%= link_to indicator.question_number, indicator, class: 'small' %>  -
+                  <%= link_to indicator.indicator_number, indicator, class: 'small' %> - 
+                  <%= link_to indicator.indicator_text, indicator, class: 'small' %>    
+                  <div class="panel-footer">
+                  <% indicator.scoring_options.each do |scoring_option| %>
+                  	<%= link_to scoring_option.description, scoring_option, class: 'small' %>
+                  	-
+                  	<%= link_to scoring_option.value, scoring_option, class: 'small' %>  
+                  	
+                  	<span class="small">
+				    <%= scoring_option.not_applicable? ? "- Not Applicable" : "" %>
+				  	</span>
+                  	
+					<br>
+                  <% end %>
+                  </div>
+					<hr>
+                <% end %>
+                
+              </div>
 			
 		</div>
 	</div>

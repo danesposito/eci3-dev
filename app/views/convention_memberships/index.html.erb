@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Convention Memberships</h1>
-
+<%= link_to 'New Convention Membership', new_convention_membership_path, class: 'right btn btn-info btn-xs'  %>
+<hr>
 <table class="table">
   <thead>
     <tr>
@@ -15,19 +16,17 @@
 
   <tbody>
     <% @convention_memberships.each do |convention_membership| %>
-      <tr>
-        <td><%= convention_membership.convention.name %></td>
-        <td><%= convention_membership.country.name %></td>
-        <td><%= convention_membership.membership_type.name %></td>
-        <td><%= convention_membership.date %></td>
-        <td><%= link_to 'Show', convention_membership %></td>
-        <td><%= link_to 'Edit', edit_convention_membership_path(convention_membership) %></td>
-        <td><%= link_to 'Destroy', convention_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= convention_membership.convention.name %></td>
+      <td><%= convention_membership.country.name %></td>
+      <td><%= convention_membership.membership_type.name %></td>
+      <td><%= convention_membership.date %></td>
+      <td><%= link_to 'Show', convention_membership %></td>
+      <td><%= link_to 'Edit', edit_convention_membership_path(convention_membership) %></td>
+      <td><%= link_to 'Destroy', convention_membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Convention membership', new_convention_membership_path %>

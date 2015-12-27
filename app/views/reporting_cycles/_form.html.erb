@@ -3,5 +3,14 @@
   <%= f.input :date %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <div id="indicators">
+    <%= f.simple_fields_for :indicators do |builder| %>
+        <%= render 'indicator_fields', :f => builder %>
+    <% end %>
+    <div class="links">
+         <%= link_to_add_association 'Add an Indicator', f, :indicators, :class => 'btn btn-info' %>
+    </div>
+  </div>
+  <br>
   <%= f.button :submit %>
 <% end %>

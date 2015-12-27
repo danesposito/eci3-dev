@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @record_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @record_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_record_type_path(@record_type) %> |
+<%= link_to 'Back', record_types_path %>

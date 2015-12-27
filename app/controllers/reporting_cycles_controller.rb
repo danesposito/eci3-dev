@@ -69,6 +69,6 @@ class ReportingCyclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reporting_cycle_params
-      params.require(:reporting_cycle).permit(:convention_id, :date, :name, :description)
+      params.require(:reporting_cycle).permit(:convention_id, :date, :name, :description, indicators_attributes: [:id, :reporting_cycle_id, :indicator_type_id, :record_type_id, :parent_id, :question_number, :indicator_number, :question_text, :indicator_text, :prior_cycle, :prior_question, scoring_options_attributes: [:id, :indicator_id, :description, :value, :not_applicable]])
     end
 end

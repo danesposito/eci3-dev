@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201044615) do
+ActiveRecord::Schema.define(version: 20151202173012) do
 
   create_table "cluster_members", force: :cascade do |t|
     t.integer  "cluster_id"
@@ -63,7 +63,37 @@ ActiveRecord::Schema.define(version: 20151201044615) do
     t.integer  "agriculture_production"
   end
 
+  create_table "indicator_types", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "weight"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "indicators", force: :cascade do |t|
+    t.integer  "indicator_type_id"
+    t.integer  "record_type_id"
+    t.integer  "parent_id"
+    t.string   "question_number"
+    t.integer  "indicator_number"
+    t.text     "question_text"
+    t.text     "indicator_text"
+    t.integer  "prior_cycle"
+    t.integer  "prior_question"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "reporting_cycle_id"
+  end
+
   create_table "membership_types", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "record_types", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
@@ -109,6 +139,15 @@ ActiveRecord::Schema.define(version: 20151201044615) do
     t.text     "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "scoring_options", force: :cascade do |t|
+    t.integer  "indicator_id"
+    t.string   "description"
+    t.integer  "value"
+    t.boolean  "not_applicable"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

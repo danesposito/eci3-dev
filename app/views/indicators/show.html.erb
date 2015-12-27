@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Indicator type:</strong>
+  <%= @indicator.indicator_type_id %>
+</p>
+
+<p>
+  <strong>Record type:</strong>
+  <%= @indicator.record_type_id %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @indicator.parent_id %>
+</p>
+
+<p>
+  <strong>Question number:</strong>
+  <%= @indicator.question_number %>
+</p>
+
+<p>
+  <strong>Indicator number:</strong>
+  <%= @indicator.indicator_number %>
+</p>
+
+<p>
+  <strong>Question text:</strong>
+  <%= @indicator.question_text %>
+</p>
+
+<p>
+  <strong>Indicator text:</strong>
+  <%= @indicator.indicator_text %>
+</p>
+
+<p>
+  <strong>Prior cycle:</strong>
+  <%= @indicator.prior_cycle %>
+</p>
+
+<p>
+  <strong>Prior question:</strong>
+  <%= @indicator.prior_question %>
+</p>
+
+<%= link_to 'Edit', edit_indicator_path(@indicator) %> |
+<%= link_to 'Back', indicators_path %>

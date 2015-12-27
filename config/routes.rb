@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :scoring_options
+  resources :indicators
+  resources :record_types
+  resources :indicator_types
   resources :region_groups
   resources :region_sources
   resources :convention_memberships

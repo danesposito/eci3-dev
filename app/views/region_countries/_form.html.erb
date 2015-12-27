@@ -1,4 +1,6 @@
 <%= simple_form_for(@region_country) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification %>
   <%= f.association :region %>
   <%= f.association :country %>
   <%= f.button :submit %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Scoring Options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indicator</th>
+      <th>Description</th>
+      <th>Value</th>
+      <th>Not applicable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scoring_options.each do |scoring_option| %>
+      <tr>
+        <td><%= scoring_option.indicator_id %></td>
+        <td><%= scoring_option.description %></td>
+        <td><%= scoring_option.value %></td>
+        <td><%= scoring_option.not_applicable %></td>
+        <td><%= link_to 'Show', scoring_option %></td>
+        <td><%= link_to 'Edit', edit_scoring_option_path(scoring_option) %></td>
+        <td><%= link_to 'Destroy', scoring_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scoring option', new_scoring_option_path %>

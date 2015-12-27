@@ -1,0 +1,20 @@
+<%= simple_form_for(@indicator) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :reporting_cycle %>
+    <%= f.association :indicator_type %>
+    <%= f.association :record_type %>
+    <%= f.input :parent_id %>
+    <%= f.input :question_number %>
+    <%= f.input :indicator_number %>
+    <%= f.input :question_text %>
+    <%= f.input :indicator_text %>
+    <%= f.input :prior_cycle %>
+    <%= f.input :prior_question %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

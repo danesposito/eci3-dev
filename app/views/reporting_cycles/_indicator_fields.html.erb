@@ -1,0 +1,24 @@
+ <div  class="nested-fields" style="border: 3px solid #eee; padding:20px; margin:20px;">
+    <div class="form-inputs">
+    <%= f.association :indicator_type %>
+    <%= f.association :record_type %>
+    <%= f.input :parent_id %>
+    <%= f.input :question_number %>
+    <%= f.input :indicator_number %>
+    <%= f.input :question_text %>
+    <%= f.input :indicator_text %>
+    <%= f.input :prior_cycle %>
+    <%= f.input :prior_question %>
+  </div>
+  <%= link_to_remove_association "Remove Indicator", f %>
+
+  <div id="answers">
+        <%= f.fields_for :scoring_options do |builder| %>
+          <%= render 'scoring_option_fields', :f => builder %>
+        <% end %>
+        <div class="links">
+            <%= link_to_add_association 'add Scoring Options', f, :scoring_options, :class => 'btn btn-info' %>
+        </div>
+      </div>
+
+</div>
