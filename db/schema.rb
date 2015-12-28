@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151202173012) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cluster_members", force: :cascade do |t|
     t.integer  "cluster_id"
     t.integer  "convention_id"
