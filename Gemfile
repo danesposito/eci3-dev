@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'table_print'
 gem "cocoon"
 gem 'simple_form'
+gem 'rails_12factor', group: :production
 
 
 # Use ActiveModel has_secure_password
