@@ -5,11 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <%= render 'layouts/menu' %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <%= yield %>
 <%= render 'layouts/bottom' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<script async src="//d1ks1friyst4m3.cloudfront.net/toolbar/prod/td.js" data-trackduck-id="56837a875c589966105f9812"></script>
 </body>
 </html>

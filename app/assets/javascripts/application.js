@@ -17,3 +17,4 @@
 //= require_tree .
 //= stub plugins/flot/flot-data
 //= stub plugins/morris/morris-data
+

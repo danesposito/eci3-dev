@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :scoring_options
   resources :indicators
   resources :record_types
